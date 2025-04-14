@@ -50,8 +50,9 @@ function KareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
+function CemberinCevresi(yaricap) {
   /* kodlar buraya */
+  return 2*pi*yaricap;
 }
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -64,10 +65,11 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
+function CemberinAlani(y,p) {
   /* kodlar buraya */
+  return p*y*y;
 }
-
+//console.log("Cemberin alani"+CemberinAlani(15,pi));
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
 /* 	GÖREV 3:
@@ -99,33 +101,64 @@ let ucetambolunenler,
 
 // 3a çözümü
 
-/* kodlar buraya */
+enbuyuk=sayilar[0];
+enkucuk=sayilar[0];
+for(let i=0;i<sayilar.length;i++){
+  if(sayilar[i]>enbuyuk){
+    enbuyuk=sayilar[i];
+  }
+  if(sayilar[i]<enkucuk){
+    enkucuk=sayilar[i];
+  }
+}
+//console.log("En Buyuk:"+enbuyuk+" En Kucuk:"+enkucuk);
 
 // 3b çözümü:
 
-/* kodlar buraya */
+ucetambolunenler=sayilar.filter((x)=>x%3===0);
+//console.log(ucetambolunenler);
 
 // 3c çözümü:
 
-/* kodlar buraya */
+ucebolunenlerintoplami=ucetambolunenler.reduce((top,x)=>top+=x,0);
+//console.log(ucebolunenlerintoplami);
 
 // 3d çözümü
 
-/* kodlar buraya */
+besyuzdenkucuksayilar=sayilar.filter((x)=>x<500);
+//console.log(besyuzdenkucuksayilar);
 
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar=[...besyuzdenkucuksayilar];
+siralisayilar.sort((a,b)=>a-b);
+//console.log(siralisayilar);
 
 // 3f çözümü
 
 /* kodlar buraya */
+//"{sayı} sayısı {tekrarSayisi} kere tekrar edilmiştir"
 
+let sayiAdetleri={};
+tekraredensayilar=[];
+for(let a=0;a<sayilar.length;a++){
+  let adet=sayilar.filter((x)=>x===sayilar[a]).length;
+  if(adet>1){
+    if(!sayiAdetleri[sayilar[a]]){
+      sayiAdetleri[sayilar[a]]=adet;
+      tekraredensayilar.push(sayilar[a]+" sayısı "+adet+" kere tekrar edilmiştir");
+    }  
+  }
+}
+//console.log(sayiAdetleri);
+//console.log(tekraredensayilar);
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
 
 function sa() {
   console.log("Kodlar çalışıyor");
+
+  console.log("test2");
  
   return "as";
 }
