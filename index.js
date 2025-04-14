@@ -123,8 +123,10 @@ let ucetambolunenler,
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
+
 function sa() {
   console.log("Kodlar çalışıyor");
+ 
   return "as";
 }
 sa();
