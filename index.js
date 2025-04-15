@@ -29,6 +29,8 @@ const sayilar = [
   867.7,
 ];
 
+
+
 /* ÖRNEK GÖREV: KareninAlani fonksiyonunu kullanarak aşağıdakileri uygulayın: 
 	1. Karenin kenar uzunluğunu fonksiyonun tek parametresi olarak alacak 
 	2. Karenin alanını hesaplayacak (💡 İPUCU: karenin alanı = karenin kenar uzunluğunun karesi)
@@ -55,6 +57,8 @@ function CemberinCevresi(yaricap) {
   return 2*pi*yaricap;
 }
 
+//console.log("Cemberin CEvresi:"+CemberinCevresi(5));
+
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
 /* 	GÖREV 2:  
@@ -69,7 +73,7 @@ function CemberinAlani(y,p) {
   /* kodlar buraya */
   return p*y*y;
 }
-//console.log("Cemberin alani"+CemberinAlani(15,pi));
+//console.log("Cemberin alani:"+CemberinAlani(15,pi));
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
 /* 	GÖREV 3:
@@ -87,7 +91,9 @@ function CemberinAlani(y,p) {
 		3f. `tekraredensayilar` adında bir dizi oluşturun. sayilar dizisi içerisindeki bazı sayılar birden fazla kere yazılmış. sayilar dizisi içerisinde birden fazla kez yazılmış sayıları tespit ederek kaç kere tekrar edildiğini belirten bir string oluşturulup `tekraredensayilar` dizisine aktarılmasını istiyoruz. Örnek string: "{sayı} sayısı {tekrarSayisi} kere tekrar edilmiştir"
 		ÖRNEK: sayilar dizisi içerisinde 45 sayısı 3 kere yazılmış. "45 sayısı 3 tekrar edilmiştir" stringini `tekraredensayilar` dizisine aktaracağız.
 		💡 İPUCU: Tekrar edilen sayıları ve kaç kere tekrar edildiğini kaydetmek için bir nesne tanımlamalısınız, bu görevi yapabilmek için en az 2 kere döngü yazmalısınız. Birinci döngüde hangi sayının kaç kere tekrar edildiğini tespit edip, 2. döngüde stringi oluşturup verilen diziye aktarmalısınız.
-*/
+
+
+    */
 
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
 
@@ -98,6 +104,9 @@ let ucetambolunenler,
   besyuzdenkucuksayilar,
   siralisayilar,
   tekraredensayilar;
+
+
+
 
 // 3a çözümü
 
@@ -115,7 +124,18 @@ for(let i=0;i<sayilar.length;i++){
 
 // 3b çözümü:
 
-ucetambolunenler=sayilar.filter((x)=>x%3===0);
+//ucetambolunenler=sayilar.filter((x)=>x%3===0);
+
+
+function hesapla(sayi){
+  if(sayi%3===0){
+    ucetambolunenler.push(sayi);
+  }
+}
+
+ucetambolunenler=[];
+sayilar.forEach(hesapla);
+
 //console.log(ucetambolunenler);
 
 // 3c çözümü:
@@ -131,6 +151,7 @@ besyuzdenkucuksayilar=sayilar.filter((x)=>x<500);
 // 3e çözümü
 
 siralisayilar=[...besyuzdenkucuksayilar];
+//console.log(siralisayilar);
 siralisayilar.sort((a,b)=>a-b);
 //console.log(siralisayilar);
 
@@ -151,7 +172,7 @@ for(let a=0;a<sayilar.length;a++){
   }
 }
 //console.log(sayiAdetleri);
-//console.log(tekraredensayilar);
+console.log(tekraredensayilar);
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
 
