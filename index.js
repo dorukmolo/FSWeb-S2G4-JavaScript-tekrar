@@ -198,6 +198,7 @@ function axiosDeneme(){
 
   console.log("Axios Start");
 
+  let deneme =333;
 
 
   axios.get('https://picsum.photos/v2/list', {
