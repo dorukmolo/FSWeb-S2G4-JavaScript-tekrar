@@ -1,5 +1,6 @@
 /* Aşağıda global olarak tanımlanmış değişkenler bulunmaktadır, bunları değiştirmeyiniz. Açıklamaları takip ederek görevleri tamamlayın. */
 
+
 const pi = 3.14159;
 
 const sayilar = [
@@ -146,6 +147,7 @@ ucebolunenlerintoplami=ucetambolunenler.reduce((top,x)=>top+=x,0);
 // 3d çözümü
 
 besyuzdenkucuksayilar=sayilar.filter((x)=>x<500);
+
 //console.log(besyuzdenkucuksayilar);
 
 // 3e çözümü
@@ -180,10 +182,52 @@ function sa() {
   console.log("Kodlar çalışıyor");
 
   console.log("test2");
+
+  console.log("test4");
+
  
   return "as";
 }
-sa();
+
+
+//sa();
+
+const axios = require('axios');
+
+function axiosDeneme(){
+
+  console.log("Axios Start");
+
+
+
+  axios.get('https://picsum.photos/v2/list', {
+    params: {
+      page: 3,
+      limit:5
+    }
+  })
+  .then(function (response) {
+    console.log(response.data);
+
+    let yeniarray=response.data;
+
+
+    
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
+  .finally(function () {
+    // always executed
+  });  
+
+
+
+  console.log("Axios End");
+}
+
+axiosDeneme();
+
 module.exports = {
   sa,
   CemberinCevresi,
@@ -196,3 +240,8 @@ module.exports = {
   siralisayilar,
   tekraredensayilar,
 };
+
+
+
+
+
